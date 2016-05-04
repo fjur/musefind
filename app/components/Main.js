@@ -34,18 +34,24 @@ var Main = React.createClass({
   handleSubmitInfo: function (value){
     console.log('handleSubmitInfo');
   },
+  handleGitInfo: function (info){
+    this.setState({
+      data: info
+    })
+  },
   render: function () {
     console.log('Main Render');
-    console.log(this.state);
     var children = React.cloneElement(this.props.children, {
       owner: this.state.owner,
       repo: this.state.repo,
       sha: this.state.sha,
+      data: this.state.data,
 
       onUpdateOwner: this.handleUpdateOwner,
       onUpdateRepo: this.handleUpdateRepo,
       onUpdateSha: this.handleUpdateSha,
-      onSubmitInfo: this.handleSubmitInfo
+      onSubmitInfo: this.handleSubmitInfo,
+      onGitInfo: this.handleGitInfo
 
     });
     return (

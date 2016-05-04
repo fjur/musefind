@@ -4,11 +4,6 @@ var BlobItem = require('./BlobItem');
 
 
 var Results = React.createClass({
-  componentWillMount: function (){
-    // githubHelpers.getFiles();
-    console.log('Results did Mount');
-    console.log(this.props);
-  },
   getGitFiles: function (){
       console.log('getGitFiles');
       console.log(this.props);
@@ -21,7 +16,6 @@ var Results = React.createClass({
         }
 
       });
-
   },
   render: function () {
     console.log('Results Render');

@@ -31,7 +31,6 @@ var Home = React.createClass({
   },
   render: function (){
     console.log('Home render');
-    console.log(this.props);
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>Donald Trump Demands Git Files</h1>

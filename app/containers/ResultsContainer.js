@@ -4,11 +4,6 @@ var githubHelpers = require('../utils/githubHelpers');
 
 //repos/:owner/:repo/git/trees/:branchname?recursive=1
 var ResultsContainer = React.createClass({
-  getInitialState: function (){
-    return {
-      data: null
-    }
-  }, 
   componentWillMount: function (){
     console.log('ResultsContainer did Mount');
     console.log(this.props);
@@ -17,9 +12,7 @@ var ResultsContainer = React.createClass({
     .then(function(info){
       console.log('setting state');
       console.log(info);
-      this.setState({
-        data: info
-      })
+      this.props.onGitInfo(info);
     }.bind(this))
 
   },
@@ -28,7 +21,7 @@ var ResultsContainer = React.createClass({
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>All Files</h1>
-        <Results gitHubData={this.state.data}/>
+        <Results gitHubData={this.props.data}/>
 
       </div>
     )
