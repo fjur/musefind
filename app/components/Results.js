@@ -16,6 +16,7 @@ var Results = React.createClass({
       });
   },
   render: function () {
+    var list = <TreeItem key={0} size={0} type={'Error'} path={''} />
     if (this.props.gitHubData && this.props.gitHubData.data.tree){
       var list = this.getGitFiles();
     }

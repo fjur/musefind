@@ -10,6 +10,7 @@ var helpers = {
     })
     .catch(function(err){
       console.log(err);
+      return null
     });
   }
 };
