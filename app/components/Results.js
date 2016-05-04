@@ -5,8 +5,6 @@ var BlobItem = require('./BlobItem');
 
 var Results = React.createClass({
   getGitFiles: function (){
-      console.log('getGitFiles');
-      console.log(this.props);
       return this.props.gitHubData.data.tree.map(function(item, index){
         var indent = item.path.split('/').length - 1; //get dynamic indentation of tree
         if (item.type === "tree"){
@@ -18,10 +16,7 @@ var Results = React.createClass({
       });
   },
   render: function () {
-    console.log('Results Render');
-    console.log(this.props.gitHubData);
     if (this.props.gitHubData && this.props.gitHubData.data.tree){
-      console.log('Enter get GIT DATA for results');
       var list = this.getGitFiles();
     }
 
