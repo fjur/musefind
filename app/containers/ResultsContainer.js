@@ -2,7 +2,7 @@ var React = require('react');
 var Results = require('../components/Results');
 var githubHelpers = require('../utils/githubHelpers');
 
-
+//repos/:owner/:repo/git/trees/:branchname?recursive=1
 var ResultsContainer = React.createClass({
   getInitialState: function (){
     return {
@@ -13,7 +13,8 @@ var ResultsContainer = React.createClass({
     // githubHelpers.getFiles();
     console.log('ResultsContainer did Mount');
     console.log(this.props);
-    githubHelpers.getFiles()
+    var gitInfo = this.props.params;
+    githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha)
     .then(function(info){
       console.log('setting state');
       console.log(info);

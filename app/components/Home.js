@@ -13,7 +13,7 @@ var Home = React.createClass({
     // });
   },
   updateRepo: function (event){
-    this.props.onUpdateOwner(event.target.value);
+    this.props.onUpdateRepo(event.target.value);
     // console.log('updateRepo');
     // this.setState({
     //   repo: event.target.value
@@ -40,8 +40,7 @@ var Home = React.createClass({
           <Prompt onUpdateParams={this.updateRepo} title="Repo"/>
           <Prompt onUpdateParams={this.updateBranch} title="Branch"/>
         </form>
-
-        <Link to="/results">
+        <Link to={"/results/" + this.props.owner + "/" + this.props.repo + "/" + this.props.sha}>
           <button type="submit" className="btn btn-lg btn-success">Get Files Checked</button>
         </Link>
         

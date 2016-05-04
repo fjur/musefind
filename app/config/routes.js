@@ -12,7 +12,7 @@ var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
-      <Route path="results" component={ResultsContainer} />
+      <Route path="results/:owner/:repo/:sha" component={ResultsContainer} />
     </Route>
   </Router>
 );
