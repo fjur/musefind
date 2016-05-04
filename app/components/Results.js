@@ -13,20 +13,11 @@ var Results = React.createClass({
       console.log('getGitFiles');
       console.log(this.props);
       return this.props.gitHubData.data.tree.map(function(item, index){
-        var indent = item.path.split('/').length - 1;
-        
-        // var whiteSpace = '';
-        
-        // for (var i = 0 ; i < indent ; i++){
-        //   whiteSpace = whiteSpace + '-'
-        // }
-
+        var indent = item.path.split('/').length - 1; //get dynamic indentation of tree
         if (item.type === "tree"){
-          // return <p>{whiteSpace + 'TREE ' + item.path}</p>
           return <TreeItem key={index} size={indent} type={'tree'} path={item.path} />
         } else if (item.type === "blob"){
           return <BlobItem key={index} size={indent} type={'blob'} path={item.path} />
-          // return <p>{whiteSpace + 'BLOB ' + item.path}</p>
         }
 
       });

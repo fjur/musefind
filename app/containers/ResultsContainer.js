@@ -10,7 +10,6 @@ var ResultsContainer = React.createClass({
     }
   }, 
   componentWillMount: function (){
-    // githubHelpers.getFiles();
     console.log('ResultsContainer did Mount');
     console.log(this.props);
     var gitInfo = this.props.params;
@@ -28,7 +27,7 @@ var ResultsContainer = React.createClass({
     console.log('Results Container Render');
     return (
       <div>
-        <h1>Hello From ResultsContai\ner</h1>
+        <h1>Hello From ResultsContainer</h1>
         <Results gitHubData={this.state.data}/>
 
       </div>
