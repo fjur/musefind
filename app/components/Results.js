@@ -33,7 +33,6 @@ var Results = React.createClass({
 
     return (
       <div>
-        <h1>Hello From Results</h1>
           {list && list}
       </div>
     )

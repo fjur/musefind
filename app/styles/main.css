@@ -1,0 +1,11 @@
+.file-item {
+  overflow: scroll;
+}
+
+.tree-item {
+  background-color: #DFF0D8;
+}
+
+.blob-item {
+  background-color: #D9EDF7;
+}

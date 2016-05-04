@@ -1,4 +1,5 @@
 var React = require('react');
+require('../styles/main.css');
 
 var Main = React.createClass({
   getInitialState: function (){
@@ -49,7 +50,6 @@ var Main = React.createClass({
     });
     return (
       <div>
-        <h1>Hello From Main</h1>
         {children}
       </div>
     )

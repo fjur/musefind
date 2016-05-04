@@ -33,7 +33,7 @@ var Home = React.createClass({
     console.log('Home render');
     console.log(this.props);
     return (
-      <div className="jumbotron col-sm-4 col-sm-offset-4 text-center">
+      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>Donald Trump Demands Git Files</h1>
         <form onSubmit={this.handleSubmit}>
           <Prompt onUpdateParams={this.updateOwner} title="UserName"/>

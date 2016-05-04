@@ -26,8 +26,8 @@ var ResultsContainer = React.createClass({
   render: function () {
     console.log('Results Container Render');
     return (
-      <div>
-        <h1>Hello From ResultsContainer</h1>
+      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
+        <h1>All Files</h1>
         <Results gitHubData={this.state.data}/>
 
       </div>
