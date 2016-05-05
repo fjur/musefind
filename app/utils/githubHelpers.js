@@ -8,7 +8,7 @@ var helpers = {
     //repos/:owner/:repo/git/trees/:branchname?recursive=1
     return axios.get("https://api.github.com/repos/" + owner + "/" + repo + "/git/trees/" + sha + "?recursive=1")
     .then(function(info){
-      store.dispatch(actions.updateTree(info.data.tree));
+      store.dispatch(actions.updateTree(info));
       return info;
     })
     .catch(function(error){

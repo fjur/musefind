@@ -2,11 +2,16 @@ var React = require('react');
 var Results = require('../components/Results');
 var githubHelpers = require('../utils/githubHelpers');
 var connect = require('react-redux').connect;
+var actions = require('../actions/git-info-actions');
+
 
 var ResultsContainer = React.createClass({
   componentWillMount: function (){
     var gitInfo = this.props.params;
     githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha);
+  },
+  componentWillUnmount: function (){
+    this.props.dispatch(actions.resetStatus());
   },
   render: function () {
     return (

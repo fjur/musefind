@@ -17,8 +17,10 @@ var Results = React.createClass({
     var list = <ListItem key={0} size={0} type={'loading'} path={''} />
     if (this.props.status == '404'){
       var list = <ListItem key={0} size={0} type={'Not-Found'} path={''} />
-    } else if (this.props.gitHubData){
+    } else if (this.props.status == '200'){
       var list = this.getGitFiles();
+    } else {
+      var list = <ListItem key={0} size={0} type={'error'} path={''} />
     }
 
     return (

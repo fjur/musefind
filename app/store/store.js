@@ -1,8 +1,9 @@
-// import { createStore } from 'redux';
 var Redux = require('redux');
 var createStore = Redux.createStore;
-// import reducer from '../reducers/index';
+// import { createStore } from 'redux';
 var reducer = require('../reducers/index');
+// import reducer from '../reducers/index';
+
 
 const store = createStore(reducer);
 

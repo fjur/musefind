@@ -20,9 +20,17 @@ var reducer = function(state = {}, action){
 
     case 'UPDATE TREE':
       return Object.assign({}, state, {
-        tree: action.value
+        tree: action.value,
+        status: action.status,
+        statusText: action.statusText
       });
     case 'ERROR':
+      return Object.assign({}, state, {
+        status: action.status,
+        statusText: action.statusText
+      });
+    case 'RESET':
+    console.log("RESET CALLED");
       return Object.assign({}, state, {
         status: action.status,
         statusText: action.statusText

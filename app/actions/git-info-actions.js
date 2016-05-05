@@ -17,10 +17,12 @@ var actions = {
       value: sha
     }
   },
-  updateTree: function (tree){
+  updateTree: function (info){
     return {
       type: 'UPDATE TREE',
-      value: tree
+      value: info.data.tree,
+      status: info.status,
+      statusText: info.statusText
     }
   },
   error: function (error){
@@ -28,6 +30,13 @@ var actions = {
       type: 'ERROR',
       status: error.status,
       statusText: error.statusText
+    }
+  },
+  resetStatus: function (){
+    return {
+      type: 'RESET',
+      status: '',
+      statusText: ''
     }
   }
 }
