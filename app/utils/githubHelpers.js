@@ -9,7 +9,6 @@ var helpers = {
       return info
     })
     .catch(function(err){
-      console.log(err);
       return null
     });
   }
