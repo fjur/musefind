@@ -3,7 +3,6 @@ var Results = require('../components/Results');
 var githubHelpers = require('../utils/githubHelpers');
 
 var connect = require('react-redux').connect;
-var actions = require('../actions/git-info-actions');
 
 //repos/:owner/:repo/git/trees/:branchname?recursive=1
 
@@ -14,7 +13,6 @@ var ResultsContainer = React.createClass({
     githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha)
     .then(function(info){
       // this.props.onGitInfo(info);
-      // this.props.dispatch(actions.updateTree(info.data.tree));
     }.bind(this));
 
   },
