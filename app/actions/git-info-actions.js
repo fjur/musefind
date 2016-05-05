@@ -2,19 +2,19 @@ var actions = {
   updateOwner: function (owner){
     return {
       type: 'UPDATE OWNER',
-      owner
+      value: owner
     };
   },
   updateRepo: function updateRepo(repo){
     return {
       type: 'UPDATE REPO',
-      repo
+      value: repo
     };
   },
   updateSha: function (sha){
     return {
       type: 'UPDATE SHA',
-      sha
+      value: sha
     }
   }
 }

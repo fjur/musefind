@@ -1,6 +1,5 @@
 var reducer = function(state = {}, action){
   console.log('reducer was called with state', state, 'and action', action)
-
   switch(action.type){
     case 'UPDATE OWNER':
       return Object.assign({}, state, {
