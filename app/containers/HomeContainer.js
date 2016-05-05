@@ -8,13 +8,16 @@ var actions = require('../actions/git-info-actions');
 
 var Home = React.createClass({
   updateOwner: function (event){
-    this.props.dispatch(actions.updateOwner(event.target.value));
+    var text = event.target.value == '' ? undefined : event.target.value
+    this.props.dispatch(actions.updateOwner(text));
   },
   updateRepo: function (event){
-    this.props.dispatch(actions.updateRepo(event.target.value));
+    var text = event.target.value == '' ? undefined : event.target.value
+    this.props.dispatch(actions.updateRepo(text));
   },
   updateBranch: function (event){
-    this.props.dispatch(actions.updateSha(event.target.value));
+    var text = event.target.value == '' ? undefined : event.target.value
+    this.props.dispatch(actions.updateSha(text));
   },
   render: function (){
     return (

@@ -30,7 +30,6 @@ var reducer = function(state = {}, action){
         statusText: action.statusText
       });
     case 'RESET':
-    console.log("RESET CALLED");
       return Object.assign({}, state, {
         status: action.status,
         statusText: action.statusText
