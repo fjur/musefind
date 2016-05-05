@@ -1,5 +1,5 @@
 var reducer = function(state = {}, action){
-  console.log('reducer was called with state', state, 'and action', action)
+  // console.log('reducer was called with state', state, 'and action', action)
   switch(action.type){
     case 'UPDATE OWNER':
       return Object.assign({}, state, {
@@ -13,23 +13,19 @@ var reducer = function(state = {}, action){
       return Object.assign({}, state, {
         repo: action.value
       });
-
-      // return {
-      //   ...state,
-      //   repo: action.value
-      // }
     case 'UPDATE SHA':
       return Object.assign({}, state, {
         sha: action.value
       });
-      
-      // return {
-      //   ...state,
-      //   sha: action.value
-      // }
+
     case 'UPDATE TREE':
       return Object.assign({}, state, {
         tree: action.value
+      });
+    case 'ERROR':
+      return Object.assign({}, state, {
+        status: action.status,
+        statusText: action.statusText
       });
     default:
       return state;

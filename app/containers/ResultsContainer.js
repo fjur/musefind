@@ -8,35 +8,30 @@ var connect = require('react-redux').connect;
 
 var ResultsContainer = React.createClass({
   componentWillMount: function (){
-    // var gitInfo = this.props.params;
-    var gitInfo = this.props;
-    githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha)
-    .then(function(info){
-      // this.props.onGitInfo(info);
-    }.bind(this));
-
+    var gitInfo = this.props.params;
+    githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha);
   },
   render: function () {
-    console.log('results container render called');
-    console.log(this.props);
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>All Files</h1>
-        <Results gitHubData={this.props.tree}/>
+        <Results 
+        gitHubData={this.props.tree}
+        status={this.props.status}
+        statusText={this.props.statusText}/>
       </div>
     )
   }
 });
 
 var mapStateToProps = function (state, props){
-  console.log('Results Container Map State To Props');
-  console.log(state);
-
   return {
     owner: state.owner,
     repo: state.repo,
     sha: state.sha,
-    tree: state.tree
+    tree: state.tree,
+    status: state.status,
+    statusText: state.statusText
   }
 }
 

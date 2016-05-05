@@ -11,8 +11,10 @@ var helpers = {
       store.dispatch(actions.updateTree(info.data.tree));
       return info;
     })
-    .catch(function(err){
-      return null
+    .catch(function(error){
+      // console.log(error);
+      store.dispatch(actions.error(error));
+      return null;
     });
   }
 };

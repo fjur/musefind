@@ -22,6 +22,13 @@ var actions = {
       type: 'UPDATE TREE',
       value: tree
     }
+  },
+  error: function (error){
+    return {
+      type: 'ERROR',
+      status: error.status,
+      statusText: error.statusText
+    }
   }
 }
 

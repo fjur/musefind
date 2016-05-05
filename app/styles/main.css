@@ -10,6 +10,14 @@
   background-color: #D9EDF7;
 }
 
+.loading-item{
+  background-color: #FCF8E3;
+}
+
 .error-item {
   background-color: #F2DEDE;
+}
+
+.Not-Found-item {
+    background-color: #F2DEDE;
 }
