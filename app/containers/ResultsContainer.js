@@ -13,8 +13,8 @@ var ResultsContainer = React.createClass({
     var gitInfo = this.props;
     githubHelpers.getFiles(gitInfo.owner, gitInfo.repo, gitInfo.sha)
     .then(function(info){
-      this.props.onGitInfo(info);
-      this.props.dispatch(actions.updateTree(info.data.tree));
+      // this.props.onGitInfo(info);
+      // this.props.dispatch(actions.updateTree(info.data.tree));
     }.bind(this));
 
   },
@@ -24,7 +24,7 @@ var ResultsContainer = React.createClass({
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>All Files</h1>
-        <Results gitHubData={this.props.stuff}/>
+        <Results gitHubData={this.props.tree}/>
       </div>
     )
   }
@@ -38,7 +38,7 @@ var mapStateToProps = function (state, props){
     owner: state.owner,
     repo: state.repo,
     sha: state.sha,
-    data: state.data
+    tree: state.tree
   }
 }
 
