@@ -27,6 +27,10 @@ var reducer = function(state = {}, action){
       //   ...state,
       //   sha: action.value
       // }
+    case 'UPDATE TREE':
+      return Object.assign({}, state, {
+        tree: action.value
+      });
     default:
       return state;
   }

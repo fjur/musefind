@@ -9,36 +9,15 @@ var Main = React.createClass({
       sha: 'master'
     }
   },
-  handleUpdateOwner: function (value){
-    this.setState({
-      owner: value
-    })
-  },
-  handleUpdateRepo: function (value){
-    this.setState({
-      repo: value
-    })
-  },
-  handleUpdateSha: function (value){
-    this.setState({
-      sha: value
-    })
-  },
   handleGitInfo: function (info){
     this.setState({
-      data: info
+      stuff: info
     })
   },
   render: function () {
     var children = React.cloneElement(this.props.children, {
-      owner: this.state.owner,
-      repo: this.state.repo,
-      sha: this.state.sha,
-      data: this.state.data,
 
-      onUpdateOwner: this.handleUpdateOwner,
-      onUpdateRepo: this.handleUpdateRepo,
-      onUpdateSha: this.handleUpdateSha,
+      stuff: this.state.stuff,
       onGitInfo: this.handleGitInfo
 
     });

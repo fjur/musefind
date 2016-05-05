@@ -16,6 +16,12 @@ var actions = {
       type: 'UPDATE SHA',
       value: sha
     }
+  },
+  updateTree: function (tree){
+    return {
+      type: 'UPDATE TREE',
+      value: tree
+    }
   }
 }
 
