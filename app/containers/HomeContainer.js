@@ -2,7 +2,7 @@ var React = require('react');
 var githubHelpers = require('../utils/githubHelpers');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link
-var Prompt = require('./Prompt');
+var Prompt = require('../components/Prompt');
 var connect = require('react-redux').connect;
 var actions = require('../actions/git-info-actions');
 
