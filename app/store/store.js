@@ -5,4 +5,5 @@ var createStore = Redux.createStore;
 var reducer = require('../reducers/index');
 
 const store = createStore(reducer);
+
 module.exports = store;

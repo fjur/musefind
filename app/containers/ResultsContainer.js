@@ -1,10 +1,7 @@
 var React = require('react');
 var Results = require('../components/Results');
 var githubHelpers = require('../utils/githubHelpers');
-
 var connect = require('react-redux').connect;
-
-//repos/:owner/:repo/git/trees/:branchname?recursive=1
 
 var ResultsContainer = React.createClass({
   componentWillMount: function (){

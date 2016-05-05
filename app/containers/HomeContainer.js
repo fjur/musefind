@@ -21,9 +21,9 @@ var Home = React.createClass({
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
         <h1>Donald Trump Demands Git Files</h1>
         <form>
-          <Prompt onUpdateParams={this.updateOwner} title="UserName"/>
-          <Prompt onUpdateParams={this.updateRepo} title="Repo"/>
-          <Prompt onUpdateParams={this.updateBranch} title="Branch"/>
+          <Prompt onUpdateParams={this.updateOwner} value={this.props.owner} title="UserName"/>
+          <Prompt onUpdateParams={this.updateRepo} value={this.props.repo} title="Repo"/>
+          <Prompt onUpdateParams={this.updateBranch} value={this.props.sha} title="Branch"/>
         </form>
         <Link to={"/results/" + this.props.owner + "/" + this.props.repo + "/" + this.props.sha}>
           <button type="submit" className="btn btn-lg btn-success">Get Files Checked</button>
